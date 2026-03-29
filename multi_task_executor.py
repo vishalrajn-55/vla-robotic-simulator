@@ -37,7 +37,7 @@ class MultiTaskExecutor:
             ball_pos = next((pos for c, pos in ball_positions if c == ball_color), None)
             basket_pos = next((pos for c, pos in basket_positions if c == basket_color), None)
             
-            if not ball_pos or not basket_pos:
+            if ball_pos is None or basket_pos is None:#if not ball_pos or not basket_pos:
                 stats['failed'] += 1
                 continue
             
