@@ -14,7 +14,7 @@ class RobotController:
     
     def __init__(self, env: Any):
         self.env = env
-        self.action_space = env.action_space
+        self.action_space = env.action_spec
     
     def execute_action(self, action_desc: str) -> Tuple[Any, float, bool]:
         """Execute action from description"""
