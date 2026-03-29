@@ -1,0 +1,42 @@
+# VLA-Robotics Multi-Task Configuration
+# Using MuJoCo (native Windows support, better for multi-object tasks)
+
+vla:
+  model: "llama2"
+  api_base: "http://localhost:11434/v1"
+  use_local: true
+  temperature: 0.2
+
+simulation:
+  robot: "Panda"
+  task: "PickPlace"
+  render: true
+  horizon: 300
+  timestep: 0.002
+
+multi_task:
+  # Multiple colored balls
+  balls:
+    - {color: "red", position: [0.30, 0.20, 0.82]}
+    - {color: "blue", position: [0.40, 0.30, 0.82]}
+    - {color: "green", position: [0.50, 0.20, 0.82]}
+  
+  # Matching colored baskets
+  baskets:
+    - {color: "red", position: [0.60, 0.00, 0.82]}
+    - {color: "blue", position: [0.70, 0.10, 0.82]}
+    - {color: "green", position: [0.80, 0.00, 0.82]}
+  
+  stacking:
+    base_position: [0.50, 0.50, 0.82]
+    max_height: 3
+
+# 7 Dynamic commands - ALL processed through VLA, NO hardcoding
+commands:
+  - "Pick up the red ball and put it in the red basket"
+  - "Sort all colored balls into their matching color baskets"
+  - "Stack the blue ball on top of the red ball, then green on top"
+  - "Move all balls to the right side of the table in order"
+  - "Organize balls: red first, then blue, then green into baskets"
+  - "Create a tower by stacking red, blue, and green balls"
+  - "Pick up each ball and place it in the corresponding colored basket"
