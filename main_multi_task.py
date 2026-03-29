@@ -21,7 +21,7 @@ logger = logging.getLogger(__name__)
 
 try:
     import robosuite as suite
-    from robosuite.controllers import load_controller_config
+    #from robosuite.controllers import load_controller_config
     import mujoco
 except ImportError as e:
     logger.error(f"❌ Missing package: {e}")
