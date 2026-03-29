@@ -1,7 +1,6 @@
-numpy
-pandas
-matplotlib
-scikit-learn
-tensorflow
-flask
-requests
+numpy>=1.21.0
+robosuite>=1.4.0
+mujoco>=2.3.0
+openai>=1.0.0
+pyyaml>=5.4.0
+scipy>=1.7.0
